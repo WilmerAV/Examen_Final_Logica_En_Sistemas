@@ -54,7 +54,7 @@ class Desk:
         #Creamos un boton para ejecutar las operaciones       
         Button (frame, text = 'Ejecutar', command = self.multiplicar).grid(row = 6, columnspan = 5, sticky = W + E)
         Button (frame, text = 'Imprimir', command = self.bottonImprimir).grid(row = 7, columnspan = 5, sticky = W + E)
-        Button (frame, text = 'Reiniciar', command = self.multiplicar).grid(row = 7, columnspan = 5, sticky = W + E)   
+        Button (frame, text = 'Reiniciar', command = self.multiplicar).grid(row = 8, columnspan = 5, sticky = W + E)   
         #designamos un área para mensajes
         self.message = Label(text = '', fg = 'red')
         self.message.grid(row = 3, column = 0, columnspan = 2, sticky = W + E)
