@@ -53,7 +53,7 @@ class Desk:
 
         #Creamos un boton para ejecutar las operaciones       
         Button (frame, text = 'Ejecutar', command = self.multiplicar).grid(row = 6, columnspan = 5, sticky = W + E)
-    
+        Button (frame, text = 'Imprimir', command = self.multiplicar).grid(row = 7, columnspan = 5, sticky = W + E)  
         #designamos un área para mensajes
         self.message = Label(text = '', fg = 'red')
         self.message.grid(row = 3, column = 0, columnspan = 2, sticky = W + E)
@@ -63,18 +63,28 @@ class Desk:
     # esta es la función que ejecuta la multiplicacion de los 3 numeros
    
     def multiplicar(self):
-            
-        
-            x=float(self.var2.get())
-            y=float(self.var1.get())
-            z=float(self.var3.get())
-            if x>z:
-                self.message['text'] = 'El Resultado de la operecion es:{}'.format(x)
-            else:                               
-                self.message['text'] = 'El Tercero Es Mayor : {}'.format(z)
-        
-    
-    
+            #aca intentamos hacer que las condiciones funcionen en el boton de ejecutar
+        x=float(self.var1.get())
+        y=float(self.var2.get())
+        z=float(self.var3.get())
+        if (x>z):
+            print ("La Operacion es:", x*y*z)
+            self.message['text'] = 'X es mayor La Operacion de Los Digitos es : {}'.format(x*y*z)
+
+        elif(z==y==x):
+            print ("La Suma De Estos 3 es:",x+y+z)
+            self.message['text'] = 'Los 3 Digitos son Iguales : {}'.format(x+y+z)
+        elif(y==0):
+            print ("Ejecucion de una resta:",x-z)
+            self.message['text'] = 'Y es Igual a 0 : {}'.format(x-z)
+        else:
+            print ("No se ingreso Ningun Numero")
+
+#def bottonImprimir(self)
+
+
+
+
     
 #validamos si estamos en la aplicación inicial del programa
 if __name__ == '__main__':
