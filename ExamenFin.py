@@ -53,7 +53,8 @@ class Desk:
 
         #Creamos un boton para ejecutar las operaciones       
         Button (frame, text = 'Ejecutar', command = self.multiplicar).grid(row = 6, columnspan = 5, sticky = W + E)
-        Button (frame, text = 'Imprimir', command = self.multiplicar).grid(row = 7, columnspan = 5, sticky = W + E)  
+        Button (frame, text = 'Imprimir', command = self.bottonImprimir).grid(row = 7, columnspan = 5, sticky = W + E)
+        Button (frame, text = 'Reiniciar', command = self.multiplicar).grid(row = 7, columnspan = 5, sticky = W + E)   
         #designamos un área para mensajes
         self.message = Label(text = '', fg = 'red')
         self.message.grid(row = 3, column = 0, columnspan = 2, sticky = W + E)
@@ -80,7 +81,19 @@ class Desk:
         else:
             print ("No se ingreso Ningun Numero")
 
-#def bottonImprimir(self)
+    def bottonImprimir(self):
+    
+        x=float(self.var1.get())
+        y=float(self.var2.get())
+        z=float(self.var3.get())
+        if(x,z,y):
+          self.message['text'] = 'Concatenar : {}'.format('x''y''z')
+        elif(x,z,y):
+        
+           self.message['text'] = 'Reptir numeros : {}'.format(x*y+z)
+        else:
+            print ("No se ingreso Ningun Numero")
+
 
 
 
